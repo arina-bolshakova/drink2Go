@@ -1,0 +1,138 @@
+.main-nav {
+  position: relative;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+
+  @media (min-width: $tablet-width) {
+
+    align-items: stretch;
+    width: 768px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-height: 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+    padding: 0 40px;
+
+  }
+}
+
+.main-nav__wrapper {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 0 0 20px;
+
+
+  @media (min-width: $tablet-width) {
+    display: contents;
+  }
+}
+
+.main-nav__logo {
+ margin-left: 20px;
+ margin-top: auto;
+ margin-bottom: auto;
+
+
+  @media (min-width: $tablet-width) {
+    order: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 40px;
+    vertical-align: middle;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 22px 20px 22px 40px;
+  }
+}
+.main-nav__title {
+  display: none;
+  font-family: $montserrat-regular;
+  font-size: 12px;
+  line-height: 16px;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    width: 170px;
+    margin-top: 24px;
+  }
+}
+
+.main-nav--wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-nav__list {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-nav__toggle {
+  position: relative;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 16px;
+  height: 12px;
+  border: none;
+  background-position: center;
+  background-color: transparent;
+
+
+  &:active {
+    background-color: $color-base-secondary;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.main-nav--closed .main-nav__toggle {
+
+  width: 16px;
+  height: 12px;
+  margin: 12px;
+  background-image: url("../../img/icons/stack.svg#burger");
+  background-repeat: no-repeat;
+}
+
+.main-nav--opened .main-nav__toggle {
+  width: 60px;
+  height: 60px;
+  background-image: url("../../img/icons/stack.svg#close");
+  background-repeat: no-repeat;
+}
+
+.main-nav--opened.active {
+  transform: translateX(0);
+
+}
+
+.main-nav--nojs .main-nav__toggle {
+  display: none;
+}
+
+.main-nav--nojs .main-nav__wrapper {
+  position: static;
+  min-height: 0;
+}
+
+.main-nav--nojs .site-list__item {
+  display: block;
+}
+
+.main-nav--closed .site-list__item {
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+}
